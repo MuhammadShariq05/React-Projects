@@ -1,68 +1,73 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+body{
+  font-family: 'Poppins', sans-serif;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #2c2c2c;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.card{
+  width: 300px;
+  background-color: rgb(226, 226, 226);
+  border-radius: 9px;
+  box-shadow: 0px 4px 8px rgba(207, 207, 207, 0.356);
+  overflow: hidden;
+  text-align: center;
+  padding: none;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.header{
+  height: 100px;
+  width: 100%;
+  background: url("https://wallpapers.com/images/high/cool-profile-pictures-studded-mask-h4zawj8mof8e3iuw.webp");
+  background-size: cover;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.userProfile{
+  margin-top: -50px;
+  padding: 0%;
+}
+
+.userpic{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5em;
+  margin: 1px 0 5px;
+}
+
+.age {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.location {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.number {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.label {
+  color: gray;
+  font-size: 0.8em;
 }
