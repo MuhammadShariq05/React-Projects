@@ -117,14 +117,14 @@ function App() {
     <>
       <div className="app">
         <div className="input-container">
-          <label htmlFor="lenghtInput">Length of paragraph (words):</label>
+          <label htmlFor="lenghtInput"><h1>Para Generator</h1></label><br />
           <input
-            type="number"
+            type="text"
             id="lengthInput"
-            value={length}
+            placeholder="Enter the Number of Words"
             onChange={handleChnage}
           />
-          <button onClick={handleGenerate}>Generate</button>
+          <button className="btn" onClick={handleGenerate}>Generate</button>
         </div>
         <div className="paragraph-conatiner">
           <p>{paragraph}</p>
