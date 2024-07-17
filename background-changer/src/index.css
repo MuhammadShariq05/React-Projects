@@ -1,10 +1,15 @@
-
-.background{
-  flex-wrap: wrap;
+html, body {
+  height: 100%;
   margin: 0;
+  padding: 0;
+}
+
+.background {
   display: flex;
-  place-items: center;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 button {
@@ -19,19 +24,47 @@ button {
   margin-left: 5px;
 }
 
-.holder{
+.holder {
   display: flex;
   align-items: center;
   background-color: aliceblue;
   justify-content: center;
-  padding: 10px 10px 10px 10px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 1px #2e3f4e;
 }
 
-.red{
+.red {
   background-color: red;
+  color: white;
+}
 
+.yellow {
+  background-color: yellow;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.purple {
+  background-color: #535bf2;
+  color: white;
+}
+
+.green {
+  background-color: green;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.white {
+  background-color: white;
 }
 
 button:hover {
@@ -42,4 +75,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
