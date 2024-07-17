@@ -1,35 +1,137 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// useState: A React hook for managing state in functional components.
+import { useState } from "react";
+import "./App.css";
+
+// An array of words that will be used to generate the random paragraph.
+const wordList = [
+  "my",
+  "name",
+  "is",
+  "muhammad",
+  "shariq",
+  "react",
+  "vite",
+  "devops",
+  "btech",
+  "web3.0",
+  "samul",
+  "lorem",
+  "ipsum",
+  "dolor",
+  "sit",
+  "amet",
+  "consectetur",
+  "adipiscing",
+  "elit",
+  "sed",
+  "do",
+  "eiusmod",
+  "tempor",
+  "incididunt",
+  "ut",
+  "labore",
+  "et",
+  "dolore",
+  "magna",
+  "aliqua",
+  "ut",
+  "enim",
+  "ad",
+  "minim",
+  "veniam",
+  "quis",
+  "nostrud",
+  "exercitation",
+  "ullamco",
+  "laboris",
+  "nisi",
+  "ut",
+  "aliquip",
+  "ex",
+  "ea",
+  "commodo",
+  "consequat",
+  "duis",
+  "aute",
+  "irure",
+  "dolor",
+  "in",
+  "reprehenderit",
+  "in",
+  "voluptate",
+  "velit",
+  "esse",
+  "cillum",
+  "dolore",
+  "eu",
+  "fugiat",
+  "nulla",
+  "pariatur",
+  "excepteur",
+  "sint",
+  "occaecat",
+  "cupidatat",
+  "non",
+  "proident",
+  "sunt",
+  "in",
+  "culpa",
+  "qui",
+  "officia",
+  "deserunt",
+  "mollit",
+  "anim",
+  "id",
+  "est",
+  "laborum",
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  // length: State variable to store the number of words in the paragraph.
+  // setLength: Function to update the length state.
+  // paragraph: State variable to store the generated paragraph.
+  // setParagraph: Function to update the paragraph state.
+  const [length, setLength] = useState(0);
+  const [paragraph, setParagraph] = useState("");
+
+  // This function generates a paragraph of the specified length.
+  const generateParagraph = (e) => {
+    // paragraphArray: An array to hold the words of the paragraph.
+    let paragraphArray = [];
+    for (let i = 0; i < e; i++) {
+      const randomWord = wordList[Math.floor(Math.random() * wordList.length)];
+      paragraphArray.push(randomWord);
+    }
+    setParagraph(paragraphArray.join(" "));
+  };
+
+  const handleChnage = (e) => {
+    setLength(e.target.value);
+  };
+
+  const handleGenerate = () => {
+    generateParagraph(length);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="app">
+        <div className="input-container">
+          <label htmlFor="lenghtInput">Length of paragraph (words):</label>
+          <input
+            type="number"
+            id="lengthInput"
+            value={length}
+            onChange={handleChnage}
+          />
+          <button onClick={handleGenerate}>Generate</button>
+        </div>
+        <div className="paragraph-conatiner">
+          <p>{paragraph}</p>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
