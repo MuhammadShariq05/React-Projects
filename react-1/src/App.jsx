@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { TodoList } from './TodoList'
+import { User } from './USer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
           <p className='description'>Discription</p>
         </div>
       </TodoList>
+      <User name="Muhammad Shariq" age="21"/>
     </>
   )
 }
