@@ -1,22 +1,19 @@
-import { useState } from 'react'
-import './App.css'
-import { TodoList } from './TodoList'
-import { User } from './USer'
+import { useState } from "react";
+import "./App.css";
+import { TodoList } from "./TodoList";
+import {User} from './User';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
       <TodoList isComplete="true">
-        <div className='todoList'>
-          <h1 className='title'>Title</h1>
-          <p className='description'>Discription</p>
-        </div>
+        <h3>Title</h3>
       </TodoList>
-      <User name="Muhammad Shariq" age="21"/>
+      <User name="Muhammad Shariq" age="21" />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
