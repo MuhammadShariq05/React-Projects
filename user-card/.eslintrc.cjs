@@ -17,6 +17,5 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    "c:/Work/react-projects/react-1/src/USer": 'off',
   },
 }

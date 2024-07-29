@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import { TodoList } from "./TodoList";
-import {User} from './User';
+import { User } from './USer';
 
 function App() {
   const [count, setCount] = useState(0);
