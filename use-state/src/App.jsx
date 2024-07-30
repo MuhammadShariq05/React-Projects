@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import { Counter } from './Counter'
 
 function App() {
   
@@ -13,9 +14,8 @@ function App() {
   const [age, setAge] = useState(21)
   function handleChange(){
     setName("Shariq")
-    console.log("Before ", age)
     // In raect decleative nature, the values are not updating unless the whole reacr app is re-rendered.
-    setAge(age + 1)
+    setAge(age)
     // console.log("After 1", age)
 
     // setAge(age + 1)
@@ -28,7 +28,8 @@ function App() {
   }
   return (
     <>
-      <h1 onClick={handleChange}>Hi, Im { name } <br /> My Age is {age}</h1>
+      <h1 onClick={handleChange}>Hi, Im { name } <br /> My Age is {age}</h1><br />
+      <Counter />
     </>
   )
 }
