@@ -15,7 +15,12 @@ function App() {
       return currentArray.slice(1);
     });
   }
-
+  // Note :
+  // adding element in index 2
+  // [currentArray.slice(0, index), letter, currentArray.slice(index)] this returns array itself [1,2,3,4] want to add 3.5 in index 2 then it 
+  //  will return [[1,2], 3.5, [3,4]]
+  // what we want is [1,2,3.5,3,4] for that we have to use (Spread Syntax) [...currentArray.slice(0, index), letter, ...currentArray.slice
+  // (index)]
   // Remove element when the conditions are matched
   function removeAllBs(letter) {
     setArray((currentArray) => {
