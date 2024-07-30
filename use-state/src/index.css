@@ -68,3 +68,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+input{
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  background-color:#1a1a1a;
+  box-shadow: none;
+  border-color: navajowhite;
+  border-width: 1px;
+  border-radius: 5px;
+}
+input:hover {
+  border-color: #646cff;
+  
+}

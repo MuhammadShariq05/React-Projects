@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import { Counter } from './Counter'
+import { StateInput } from './Input'
 
 function App() {
   
@@ -28,8 +29,12 @@ function App() {
   }
   return (
     <>
+      <div className='card'>
       <h1 onClick={handleChange}>Hi, Im { name } <br /> My Age is {age}</h1><br />
+      </div>
       <Counter />
+      <StateInput />
+
     </>
   )
 }
