@@ -15,7 +15,7 @@ In React, keys are special string attributes used to identify elements in a list
 
 When rendering a list of elements, you should assign a unique key to each element. This key should be unique among its siblings.
 
-# Common Pitfalls
+#3 Common Pitfalls
 - **Using Non-Unique Keys:** Ensure that keys are unique among siblings. Repeated keys can cause unexpected behavior.
 - **Dynamic Data:** When dealing with dynamic data, ensure that keys remain consistent across renders to avoid component state issues.
 
