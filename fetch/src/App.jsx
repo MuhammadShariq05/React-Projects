@@ -5,11 +5,13 @@ import { useEffect } from "react";
 function App() {
   const [users, setUsers] = useState();
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState()
+  const [error, setError] = useState();
+
+  const controller = new AbortController()
   useEffect(() => {
     setLoading(true)
     setError(undefined)
-    fetch("https://jsonplaceholder.typicode.com/users")
+    fetch("https://jsonplaceholder.typicode.com/users" ,{ signal: controller.signal })
       .then(res => {
         if(res.status === 200) return res.json()
         else return Promise.reject(res)
@@ -21,6 +23,10 @@ function App() {
       .finally(() => {
         setLoading(false);
       });
+
+      return () => {
+        controller.abort()
+      }
   },[]);
 
   let jsx;
