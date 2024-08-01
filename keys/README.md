@@ -1,4 +1,4 @@
-# Keys in React
+# 1 Keys in React
 
 ## Overview
 
@@ -20,7 +20,7 @@ When rendering a list of elements, you should assign a unique key to each elemen
 - **Dynamic Data:** When dealing with dynamic data, ensure that keys remain consistent across renders to avoid component state issues.
 
 
-# Fragments in React
+# 2 Fragments in React
 
 ## Overview
 
