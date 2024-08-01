@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export function NameComp(){
   const [name, setName] = useState("")
   const [age, setAge] = useState(0)
+  const [width, setWidth] = useState(window.innerWidth)
 
   function increament(){
     setAge(age +1)
@@ -10,6 +11,11 @@ export function NameComp(){
   function decreament(){
     setAge(age -1)
   }
+   useEffect(() => {
+    window.addEventListener("resize" , ()=>{
+      setWidth(window.innerWidth)
+    })
+   },[])
 
   return(
     <>
@@ -18,6 +24,9 @@ export function NameComp(){
       <h2>{age}</h2>
       <button className="counter" onClick={decreament}>-</button>
       <button className="counter" onClick={increament}>+</button>
+      <br />
+      <br />
+      {width}
     </>
   )
 }
