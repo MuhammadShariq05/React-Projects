@@ -6,6 +6,7 @@ export function FuncComp() {
   const [age, setAge] = useState(0);
 
   useEffect(() => {
+    console.log("Re-render")
     document.title = name
   }, [name])
 
