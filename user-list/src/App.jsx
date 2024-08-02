@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
+import { User } from "./User";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([]); // Initialize users as an empty array
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState();
+
+  useEffect(() => {
+    const controller = new AbortController();
+    setLoading(true);
+    setError(undefined);
+
+    fetch("https://jsonplaceholder.typicode.com/users", {
+      signal: controller.signal,
+    })
+      .then((res) => {
+        if (res.status === 200) return res.json();
+        else return Promise.reject(res);
+      })
+      .then((data) => {
+        setUsers(data);
+      })
+      .catch((e) => {
+        if (e.name !== "AbortError") {
+          setError(e);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+
+    return () => {
+      controller.abort();
+    };
+  }, []);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>Error!</h2>; 
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>User</h1>
+      <ul>
+        {users.map((user) => (
+          <User key={user.id} name={user.name} /> // Ensure each user has a unique key
+        ))}
+      </ul>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
