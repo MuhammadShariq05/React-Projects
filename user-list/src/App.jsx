@@ -41,7 +41,7 @@ function App() {
   }
 
   if (error) {
-    return <h2>Error!</h2>; 
+    return <h2>Error!</h2>;
   }
 
   return (
@@ -49,7 +49,7 @@ function App() {
       <h1>User</h1>
       <ul>
         {users.map((user) => (
-          <User key={user.id} name={user.name} /> // Ensure each user has a unique key
+          <User key={user.id} {...user} /> // Ensure each user has a unique key
         ))}
       </ul>
     </>
