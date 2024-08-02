@@ -6,9 +6,15 @@ function App() {
 
   return (
     <>
-      
+      <div className="new-todo-form">
+        <label htmlFor="todo-input"><h1>Todos</h1></label>
+        <br />
+        <input type="text" id="todo-input" placeholder='Write Todo here'/>
+        <button>Add Todo</button>
+      </div>
     </>
   )
 }
 
 export default App
+ 
