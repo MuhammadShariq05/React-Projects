@@ -25,6 +25,12 @@ function App() {
     })
   }
 
+  function deleteItem(todoId) {
+    setTodos(currentTodos => {
+      return currentTodos.filter(todo => todo.id != todoId)
+    })
+  }
+
   return (
     <>
       <div className="new-todo-form">
@@ -55,7 +61,9 @@ function App() {
                   />
                   <span className="span-items"data-list-item-text>{todo.name}</span>
                 </label>
-                <button className="delete-items"data-button-delete>Delete</button>
+                <button 
+                onClick={() => {deleteItem(todo.id)}}
+                className="delete-items"data-button-delete>Delete</button>
               </li>
             );
           })}
