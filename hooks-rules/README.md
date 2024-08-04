@@ -12,6 +12,23 @@ React hooks are a powerful feature introduced in React 16.8 that allow you to us
    - Call Hooks from React function components.
    - Call Hooks from custom Hooks (i.e., functions that start with `use` and may call other hooks).
 
+3. **Do Not Call Hooks Conditionally:**
+   - Hooks should not be called inside conditional statements.
+   - Ensure hooks are called in the same order each time a component renders.
+
+    ```jsx
+    // Incorrect
+    if (someCondition) {
+      useState();
+    }
+
+    // Correct
+    const [state, setState] = useState();
+    if (someCondition) {
+      // Your code here
+    }
+    ```
+
 ## Specific Hooks Rules
 
 1. **`useState`:**
