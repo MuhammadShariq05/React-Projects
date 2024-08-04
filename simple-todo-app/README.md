@@ -16,3 +16,4 @@ This project will also be one of the first projects where the instructions I giv
 ## Bonus
 
 1. The easiest way to create this project is to just put all the HTML/data into one single component. This works fine for this project since it is so small, but with larger projects is not ideal. The bonus for this project is to break up your project so that each todo item in the list is rendered as a separate component from your `App.jsx` component.
+ 
