@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     console.log("In effect");
-    printName()
+    printName();
   }, [printName]);
   return (
     <>
