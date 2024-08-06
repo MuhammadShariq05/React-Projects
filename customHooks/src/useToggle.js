@@ -4,8 +4,8 @@ export default function useToggle(initialValue) {
   const [value, setValue] = useState(initialValue);
 
   function toggle() {
-    setValue(currentValue => !currentValue)
+    setValue(currentValue => !currentValue);
   }
-
-  return [value, toggle]
+  
+  return { value, toggle };
 }
