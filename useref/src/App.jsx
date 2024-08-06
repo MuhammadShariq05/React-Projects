@@ -8,7 +8,7 @@ function App() {
   
   useEffect(() => {
     setTimeout(() => {
-      divRef.current.innerHTML(10)
+      divRef.current.innerHTML = 10
     }, [5000])
   })
 
